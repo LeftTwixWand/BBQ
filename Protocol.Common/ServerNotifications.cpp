@@ -5,11 +5,10 @@ BBQNotification BBQNotificationEnumeration::ChickenReady = BBQNotification(301, 
 BBQNotification BBQNotificationEnumeration::BeefReady = BBQNotification(302, "BEEF READY");
 BBQNotification BBQNotificationEnumeration::MammothReady = BBQNotification(303, "LAST MONTH MAMMOTH READY");
 
-BBQNotification::BBQNotification(int messageId, const std::string& message)
+BBQNotification::BBQNotification(int messageId, const std::string& message) : HTTPMessage(messageId)
 {
 	MessageType::ValidateNotificationId(messageId);
 
-	this->MessageId = messageId;
 	this->Message = message;
 }
 

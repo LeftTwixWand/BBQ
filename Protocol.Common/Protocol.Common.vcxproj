@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClientRequests.h" />
+    <ClInclude Include="HTTPMessage.h" />
     <ClInclude Include="MessageTypes.h" />
     <ClInclude Include="ServerNotifications.h" />
     <ClInclude Include="ServerResponses.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClientRequests.cpp" />
+    <ClCompile Include="HTTPMessage.cpp" />
     <ClCompile Include="MessageTypes.cpp" />
     <ClCompile Include="ServerNotifications.cpp" />
     <ClCompile Include="ServerResponses.cpp" />

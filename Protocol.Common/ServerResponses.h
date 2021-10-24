@@ -3,9 +3,10 @@
 #define SERVER_RESPONSES_H
 
 #include <string>
+#include "HTTPMessage.h"
 
 // A class, that represents BBQ protocol server responses
-class BBQResponse
+class BBQResponse : public HTTPMessage
 {
 protected:
 
@@ -20,7 +21,7 @@ public:
 	BBQResponse(int messageId, const std::string& message);
 
 	// Returns "body" for HTTP request
-	std::string Body();
+	std::string Body() override;
 };
 
 

@@ -5,10 +5,10 @@ BBQRequest BBQRequestEnumeration::Hungry = BBQRequest(101, "I AM HUNGRY, GIVE ME
 BBQRequest BBQRequestEnumeration::NoThanks = BBQRequest(102, "NO THANKS");
 BBQRequest BBQRequestEnumeration::TakeThat = BBQRequest(103, "I TAKE THAT!!!");
 
-BBQRequest::BBQRequest(int messageId, const std::string& message)
+BBQRequest::BBQRequest(int messageId, const std::string& message) : HTTPMessage(messageId)
 {
 	MessageType::ValidateRequestId(messageId);
-	this->MessageId = messageId;
+
 	this->Message = message;
 }
 

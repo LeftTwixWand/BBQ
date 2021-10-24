@@ -3,9 +3,10 @@
 #define CLIENT_REQUESTS_H
 
 #include <string>
+#include "HTTPMessage.h"
 
 // A class, that represents BBQ protocol clinet requests
-class BBQRequest 
+class BBQRequest : public HTTPMessage
 {
 protected:
 
@@ -20,7 +21,7 @@ public:
 	BBQRequest(int messageId, const std::string& message);
 
 	// Returns "body" for HTTP request
-	std::string Body();
+	std::string Body() override;
 };
 
 // Pattern "Enumeration", that makes it easier to work with pre-defined data 

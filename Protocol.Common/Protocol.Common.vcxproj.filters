@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Messaging">
       <UniqueIdentifier>{b78616c9-c118-4549-a8f6-3d566d19a2aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\HTTP">
+      <UniqueIdentifier>{512d7636-a573-4ce5-b3e5-ac957849b926}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HTTP">
+      <UniqueIdentifier>{87f37277-4f54-4fbc-877d-873784eb3def}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MessageTypes.h">
@@ -33,6 +39,9 @@
     <ClInclude Include="ServerResponses.h">
       <Filter>Header Files\Messaging</Filter>
     </ClInclude>
+    <ClInclude Include="HTTPMessage.h">
+      <Filter>Header Files\HTTP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MessageTypes.cpp">
@@ -46,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="ServerResponses.cpp">
       <Filter>Source Files\Messaging</Filter>
+    </ClCompile>
+    <ClCompile Include="HTTPMessage.cpp">
+      <Filter>Source Files\HTTP</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
