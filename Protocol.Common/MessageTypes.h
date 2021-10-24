@@ -9,9 +9,9 @@ public:
 
 	enum class Value
 	{
-		Request = 100, // All the request codes being in diapason [101-199]
-		Response = 200, // All the response codes being in diapason [201-299]
-		Notification = 300, // All the notification codes being in diapason [301-399]
+		Request = 100, // All the requests codes being in diapason [101-199]
+		Response = 200, // All the responses codes being in diapason [201-299]
+		Notification = 300, // All the notifications codes being in diapason [301-399]
 	};
 
 	Value GetValue();
