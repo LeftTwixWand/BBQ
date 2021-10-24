@@ -28,16 +28,15 @@ void BBQConnection::StartConnection(std::string remoteIp, int remotePort)
 	if (connectionResult == SOCKET_ERROR)
 	{
 		std::cerr << "Can't connect ot server, Err#" << WSAGetLastError() << std::endl;
-		closesocket(remoteSocket);
-		WSACleanup();
+		this->Close();
 		return;
 	}
 }
 
 BBQConnection::BBQConnection()
 {
-	InitializeWinSocket();
-	this->remoteSocket = SOCKET_ERROR;
+	this->InitializeWinSocket();
+	this->InitializeRemoteSocket();
 }
 
 BBQConnection::BBQConnection(std::string remoteIp, int remotePort)
@@ -49,6 +48,8 @@ BBQConnection::BBQConnection(std::string remoteIp, int remotePort)
 
 BBQConnection::~BBQConnection()
 {
+	closesocket(this->remoteSocket);
+	WSACleanup();
 }
 
 SOCKET BBQConnection::GetRemoteSocket()

@@ -5,6 +5,8 @@
 #include <WS2tcpip.h>
 #include <string>
 
+#pragma comment(lib, "Ws2_32.lib")
+
 // A class, that incapsulate TCP/IP connection manipulations for BBQ protocol
 class BBQConnection
 {
@@ -25,12 +27,13 @@ private:
 	void StartConnection(std::string remoteIp, int remotePort);
 
 protected:
+
 	SOCKET remoteSocket;
+
+public:
 
 	// Returns closed socket connection
 	BBQConnection();
-
-public:
 
 	// Returns instance of opened socket connection
 	BBQConnection(std::string remoteIp, int remotePort);
