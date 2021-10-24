@@ -19,10 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClientRequests.h" />
     <ClInclude Include="MessageTypes.h" />
+    <ClInclude Include="ServerNotifications.h" />
+    <ClInclude Include="ServerResponses.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClientRequests.cpp" />
     <ClCompile Include="MessageTypes.cpp" />
+    <ClCompile Include="ServerNotifications.cpp" />
+    <ClCompile Include="ServerResponses.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
