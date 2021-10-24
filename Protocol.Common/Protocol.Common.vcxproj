@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BBQConnection.h" />
     <ClInclude Include="ClientRequests.h" />
     <ClInclude Include="HTTPMessage.h" />
     <ClInclude Include="MessageTypes.h" />
@@ -26,6 +27,7 @@
     <ClInclude Include="ServerResponses.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BBQConnection.cpp" />
     <ClCompile Include="ClientRequests.cpp" />
     <ClCompile Include="HTTPMessage.cpp" />
     <ClCompile Include="MessageTypes.cpp" />

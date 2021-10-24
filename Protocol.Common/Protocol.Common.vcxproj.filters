@@ -25,6 +25,12 @@
     <Filter Include="Source Files\HTTP">
       <UniqueIdentifier>{87f37277-4f54-4fbc-877d-873784eb3def}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Connection">
+      <UniqueIdentifier>{af1bf779-0beb-46b2-a592-b18f69174f4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Connection">
+      <UniqueIdentifier>{ade49347-781d-4bf5-8828-dc477ed0ecb6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MessageTypes.h">
@@ -42,6 +48,9 @@
     <ClInclude Include="HTTPMessage.h">
       <Filter>Header Files\HTTP</Filter>
     </ClInclude>
+    <ClInclude Include="BBQConnection.h">
+      <Filter>Header Files\Connection</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MessageTypes.cpp">
@@ -58,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="HTTPMessage.cpp">
       <Filter>Source Files\HTTP</Filter>
+    </ClCompile>
+    <ClCompile Include="BBQConnection.cpp">
+      <Filter>Source Files\Connection</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
