@@ -22,6 +22,7 @@
     <ClInclude Include="BBQConnection.h" />
     <ClInclude Include="ClientRequests.h" />
     <ClInclude Include="HTTPMessage.h" />
+    <ClInclude Include="http_parser.h" />
     <ClInclude Include="MessageTypes.h" />
     <ClInclude Include="ServerNotifications.h" />
     <ClInclude Include="ServerResponses.h" />
@@ -30,6 +31,7 @@
     <ClCompile Include="BBQConnection.cpp" />
     <ClCompile Include="ClientRequests.cpp" />
     <ClCompile Include="HTTPMessage.cpp" />
+    <ClCompile Include="http_parser.c" />
     <ClCompile Include="MessageTypes.cpp" />
     <ClCompile Include="ServerNotifications.cpp" />
     <ClCompile Include="ServerResponses.cpp" />

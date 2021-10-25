@@ -51,6 +51,9 @@
     <ClInclude Include="BBQConnection.h">
       <Filter>Header Files\Connection</Filter>
     </ClInclude>
+    <ClInclude Include="http_parser.h">
+      <Filter>Header Files\HTTP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MessageTypes.cpp">
@@ -70,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="BBQConnection.cpp">
       <Filter>Source Files\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="http_parser.c">
+      <Filter>Source Files\HTTP</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
