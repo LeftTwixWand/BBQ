@@ -3,6 +3,7 @@
 #define BBQ_SERVER_H
 
 #include "BBQConnection.h"
+#include "ServerNotifications.h"
 
 // This is a BBQ protocol server class
 class BBQServer
@@ -16,7 +17,8 @@ private:
 	BBQConnection notificationConnection;
 
 	void HandlerIncommingMessages();
-
+	std::string GetResponse(char* buffer);
+	void SendNotification(BBQNotification notification);
 public:
 
 	BBQServer();

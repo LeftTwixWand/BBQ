@@ -1,5 +1,6 @@
-#include "BBQServer.h"
 #include <iostream>
+#include <thread>
+#include "BBQServer.h"
 
 BBQServer::BBQServer()
 {
@@ -18,9 +19,17 @@ void BBQServer::Start(int messagingPort, int notificationPort)
 
 	this->messagingConnection = *messagingConnected;
 	this->notificationConnection = *notificationConnected;
+	// -------------------------------------------------------------
 
-	this->HandlerIncommingMessages();
+	std::thread pollingThread([this] { this->HandlerIncommingMessages(); });
 
+	SendNotification(BBQNotificationEnumeration::BeefReady);
+	SendNotification(BBQNotificationEnumeration::ChickenReady);
+	SendNotification(BBQNotificationEnumeration::MammothReady);
+
+	pollingThread.join();
+
+	// -------------------------------------------------------------
 	delete messagingConnected;
 	delete notificationConnected;
 }
@@ -52,4 +61,15 @@ void BBQServer::HandlerIncommingMessages()
 		std::cout << buf << std::endl;
 		ZeroMemory(buf, sizeof(buf));
 	}
+}
+
+std::string BBQServer::GetResponse(char* request)
+{
+	return std::string(request, sizeof(request), 0);
+}
+
+void BBQServer::SendNotification(BBQNotification notification)
+{
+	// TODO: Parse a result and send a response
+	send(this->notificationConnection.GetRemoteSocket(), notification.Message.c_str(), notification.Message.size(), 0);
 }
