@@ -27,7 +27,7 @@
     <ClInclude Include="BBQServer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BBQServercpp.cpp" />
+    <ClCompile Include="BBQServer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

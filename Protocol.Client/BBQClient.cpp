@@ -9,8 +9,8 @@ BBQClient::BBQClient(BBQConnection* messagingConnection, BBQConnection* notifica
 
 BBQClient::~BBQClient()
 {
-	this->messagingConnection.Close();
-	this->notificationConnnection.Close();
+	this->messagingConnection.CloseConnection();
+	this->notificationConnnection.CloseConnection();
 }
 
 void BBQClient::ListenForServerNotifications()
@@ -19,6 +19,7 @@ void BBQClient::ListenForServerNotifications()
 
 void BBQClient::SendRequest(BBQRequest request)
 {
+	// TODO: Pack request into HTTP, using https://github.com/nodejs/http-parser
 	int status = send(messagingConnection.GetRemoteSocket(), request.Message.c_str(), request.Message.size(), 0);
 	if (status == SOCKET_ERROR)
 	{
