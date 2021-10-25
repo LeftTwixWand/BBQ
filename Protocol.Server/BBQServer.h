@@ -16,9 +16,15 @@ private:
 	// Connection for notifications sending
 	BBQConnection notificationConnection;
 
+	// Run asynchronus thread, that is listening for incomming messages
 	void HandlerIncommingMessages();
-	std::string GetResponse(char* buffer);
+
+	// Send prepared notifications to the client
+	void SendNotifications();
+
+	// Send notification to the connected client
 	void SendNotification(BBQNotification notification);
+
 public:
 
 	BBQServer();

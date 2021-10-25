@@ -23,9 +23,7 @@ void BBQServer::Start(int messagingPort, int notificationPort)
 
 	std::thread pollingThread([this] { this->HandlerIncommingMessages(); });
 
-	SendNotification(BBQNotificationEnumeration::BeefReady);
-	SendNotification(BBQNotificationEnumeration::ChickenReady);
-	SendNotification(BBQNotificationEnumeration::MammothReady);
+	SendNotifications();
 
 	pollingThread.join();
 
@@ -58,18 +56,24 @@ void BBQServer::HandlerIncommingMessages()
 
 		// TODO: Parse a result and send a response
 		send(this->messagingConnection.GetRemoteSocket(), buf, sizeof(buf), 0);
-		std::cout << buf << std::endl;
+		std::cout << "Client sent: " << buf << std::endl;
 		ZeroMemory(buf, sizeof(buf));
 	}
 }
 
-std::string BBQServer::GetResponse(char* request)
+void BBQServer::SendNotifications()
 {
-	return std::string(request, sizeof(request), 0);
+	SendNotification(BBQNotificationEnumeration::BeefReady);
+
+	Sleep(4000);
+	SendNotification(BBQNotificationEnumeration::ChickenReady);
+	
+	Sleep(5000);
+	SendNotification(BBQNotificationEnumeration::MammothReady);
 }
 
 void BBQServer::SendNotification(BBQNotification notification)
 {
-	// TODO: Parse a result and send a response
+	// TODO: Pack notification to HTTP
 	send(this->notificationConnection.GetRemoteSocket(), notification.Message.c_str(), notification.Message.size(), 0);
 }

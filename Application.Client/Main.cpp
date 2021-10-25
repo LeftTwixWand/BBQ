@@ -8,11 +8,12 @@ void main()
 	auto notificationConnection = new BBQConnection("127.0.0.1", 54001);
 
 	auto client = BBQClient(messagingConnaction, notificationConnection);
-	client.ListenForServerNotifications();
 
 	client.SendRequest(BBQRequestEnumeration::Hungry);
 	client.SendRequest(BBQRequestEnumeration::NoThanks);
 	client.SendRequest(BBQRequestEnumeration::TakeThat);
+
+	client.ListenForServerNotifications();
 
 	delete messagingConnaction;
 	delete notificationConnection;

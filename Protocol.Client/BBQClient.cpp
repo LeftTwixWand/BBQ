@@ -31,7 +31,7 @@ void BBQClient::ListenForServerNotifications()
 				// So positive result is when bytesReceived > 0
 				if (bytesReceived > 0)
 				{
-					std::cout << "Server response: " << std::string(buffer, 0, bytesReceived) << std::endl;
+					std::cout << "Server notification: " << std::string(buffer, 0, bytesReceived) << std::endl;
 					ZeroMemory(buffer, sizeof(buffer));
 				}
 			}
