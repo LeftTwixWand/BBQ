@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 #include "BBQServer.h"
+#include "ServerResponses.h"
 
 BBQServer::BBQServer()
 {
@@ -54,8 +55,10 @@ void BBQServer::HandlerIncommingMessages()
 			break;
 		}
 
+		auto response = BBQResponse::GetFromRequest(buf);
+
 		// TODO: Parse a result and send a response
-		send(this->messagingConnection.GetRemoteSocket(), buf, sizeof(buf), 0);
+		send(this->messagingConnection.GetRemoteSocket(), response.Message.c_str(), response.Message.size(), 0);
 		std::cout << "Client sent: " << buf << std::endl;
 		ZeroMemory(buf, sizeof(buf));
 	}

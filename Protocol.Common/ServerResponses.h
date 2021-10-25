@@ -20,6 +20,9 @@ public:
 
 	BBQResponse(int messageId, const std::string& message);
 
+	// Returns a BBQResponse from a request message
+	static BBQResponse GetFromRequest(char* requestBuffer);
+
 	// Returns "body" for HTTP request
 	std::string Body() override;
 };
